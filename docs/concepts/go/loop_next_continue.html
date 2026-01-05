@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Next Continue in Go - Prog Lang Compare</title>
+    <meta name="title" content="Next Continue in Go - Prog Lang Compare">
+    <meta name="description" content="Learn how to next continue in Go. See code examples and detailed explanations.">
+    <meta name="keywords" content="Go, Loop Next Continue, programming, code examples, syntax, Loop">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://srix.github.io/prog-lang-compare/concepts/go/loop_next_continue.html">
+    <meta property="og:title" content="Next Continue in Go">
+    <meta property="og:description" content="Learn how to next continue in Go. See code examples and detailed explanations.">
+    <meta property="og:image" content="https://srix.github.io/prog-lang-compare/social-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://srix.github.io/prog-lang-compare/concepts/go/loop_next_continue.html">
+    <meta property="twitter:title" content="Next Continue in Go">
+    <meta property="twitter:description" content="Learn how to next continue in Go. See code examples and detailed explanations.">
+    <meta property="twitter:image" content="https://srix.github.io/prog-lang-compare/social-preview.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://srix.github.io/prog-lang-compare/concepts/go/loop_next_continue.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+
+    <!-- Inline Critical CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav.breadcrumb {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        nav.breadcrumb a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        nav.breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        nav.breadcrumb span {
+            color: #666;
+            margin: 0 5px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-left: 4px solid #0066cc;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        .content pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
+
+        .content code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+
+        .content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .back-link {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .back-link a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Next Continue in Go",
+        "description": "Learn how to next continue in Go. See code examples and detailed explanations.",
+        "keywords": "Go, Loop Next Continue, programming",
+        "url": "https://srix.github.io/prog-lang-compare/concepts/go/loop_next_continue.html",
+        "datePublished": "2023-06-09",
+        "dateModified": "2023-06-09",
+        "author": {
+            "@type": "Organization",
+            "name": "Prog Lang Compare"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prog Lang Compare",
+            "url": "https://srix.github.io/prog-lang-compare"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://srix.github.io/prog-lang-compare/concepts/go/loop_next_continue.html"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>›</span>
+            <a href="../go.html">Go</a>
+            <span>›</span>
+            <span>Loop Next Continue</span>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Next Continue in Go</h1>
+
+            <div class="meta">
+                <strong>Category:</strong> Loop |
+                <strong>Language:</strong> Go
+            </div>
+
+            <article class="content">
+                <p>In Go, the <code>Next</code> and <code>Continue</code> keywords are used in loops to control the iteration process.</p>
+<p><code>Next</code> is used to move the iterator to the next item in a collection or sequence. This is commonly used with the <code>for...range</code> statement to iterate over slices, arrays, maps, and channels. Here's an example using <code>Next</code> with a <code>for...range</code> loop:</p>
+<pre><code class="language-go">// Iterate over a slice of integers
+numbers := []int{1, 2, 3, 4, 5}
+for _, num := range numbers {
+    if num == 3 {
+        continue // skip 3 and move to the next item
+    }
+    fmt.Println(num)
+}
+</code></pre>
+<p>Output:<br>
+<pre><code class="language-">1<br>
+2<br>
+4<br>
+5<br>
+</code></pre></p>
+<p>In this example, the loop skips over the number 3 and continues with the next iteration.</p>
+<p><code>Continue</code> is used to skip the current iteration of a loop and move on to the next. It is commonly used in conjunction with conditionals to skip certain iterations based on a condition. Here's an example:</p>
+<pre><code class="language-go">// Print even numbers from 1 to 10
+for i := 1; i <= 10; i++ {
+    if i%2 != 0 {
+        continue // skip if not even
+    }
+    fmt.Println(i)
+}
+</code></pre>
+<p>Output:<br>
+<pre><code class="language-">2<br>
+4<br>
+6<br>
+8<br>
+10<br>
+</code></pre></p>
+<p>In this example, the loop skips over odd numbers and only prints the even numbers.</p>
+            </article>
+
+            <div class="back-link">
+                <a href="../../index.html">← Back to Full Comparison Table</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>Content generated using AI | <a href="https://github.com/srix/prog-lang-compare" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>

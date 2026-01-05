@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Float in Perl - Prog Lang Compare</title>
+    <meta name="title" content="Float in Perl - Prog Lang Compare">
+    <meta name="description" content="Learn how to float in Perl. See code examples and detailed explanations.">
+    <meta name="keywords" content="Perl, Number Float, programming, code examples, syntax, Number">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://srix.github.io/prog-lang-compare/concepts/perl/number_float.html">
+    <meta property="og:title" content="Float in Perl">
+    <meta property="og:description" content="Learn how to float in Perl. See code examples and detailed explanations.">
+    <meta property="og:image" content="https://srix.github.io/prog-lang-compare/social-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://srix.github.io/prog-lang-compare/concepts/perl/number_float.html">
+    <meta property="twitter:title" content="Float in Perl">
+    <meta property="twitter:description" content="Learn how to float in Perl. See code examples and detailed explanations.">
+    <meta property="twitter:image" content="https://srix.github.io/prog-lang-compare/social-preview.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://srix.github.io/prog-lang-compare/concepts/perl/number_float.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+
+    <!-- Inline Critical CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav.breadcrumb {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        nav.breadcrumb a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        nav.breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        nav.breadcrumb span {
+            color: #666;
+            margin: 0 5px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-left: 4px solid #0066cc;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        .content pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
+
+        .content code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+
+        .content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .back-link {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .back-link a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Float in Perl",
+        "description": "Learn how to float in Perl. See code examples and detailed explanations.",
+        "keywords": "Perl, Number Float, programming",
+        "url": "https://srix.github.io/prog-lang-compare/concepts/perl/number_float.html",
+        "datePublished": "2023-06-09",
+        "dateModified": "2023-06-09",
+        "author": {
+            "@type": "Organization",
+            "name": "Prog Lang Compare"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prog Lang Compare",
+            "url": "https://srix.github.io/prog-lang-compare"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://srix.github.io/prog-lang-compare/concepts/perl/number_float.html"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>›</span>
+            <a href="../perl.html">Perl</a>
+            <span>›</span>
+            <span>Number Float</span>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Float in Perl</h1>
+
+            <div class="meta">
+                <strong>Category:</strong> Number |
+                <strong>Language:</strong> Perl
+            </div>
+
+            <article class="content">
+                <p>In Perl, float numbers are also known as floating-point numbers. Floating-point numbers are used to represent real numbers with a fractional part. These numbers can be positive, negative or zero. To use floating-point numbers in Perl, we can use the following syntax:</p>
+<pre><code class="language-">$num = 3.14;
+</code></pre>
+<p>Here, <code>$num</code> is a scalar variable that stores the floating-point value 3.14. We can perform various operations on this floating-point number, for example:</p>
+<pre><code class="language-">$num1 = 5.5;
+$num2 = 2.5;
+<p># Addition<br>
+$result = $num1 + $num2;<br>
+print "Addition Result: $result\n";</p>
+<p># Subtraction<br>
+$result = $num1 - $num2;<br>
+print "Subtraction Result: $result\n";</p>
+<p># Multiplication<br>
+$result = $num1 * $num2;<br>
+print "Multiplication Result: $result\n";</p>
+<p># Division<br>
+$result = $num1 / $num2;<br>
+print "Division Result: $result\n";<br>
+</code></pre></p>
+<p>Output:<br>
+<pre><code class="language-">Addition Result: 8<br>
+Subtraction Result: 3<br>
+Multiplication Result: 13.75<br>
+Division Result: 2.2<br>
+</code></pre></p>
+<p>Here, we performed arithmetic operations on two floating-point numbers <code>$num1</code> and <code>$num2</code> and stored the result in the variable <code>$result</code>. We then printed the result on the console.</p>
+<p>Note that as with any programming language, floating-point operations may be subject to rounding errors due to the finite precision of floating-point numbers.</p>
+            </article>
+
+            <div class="back-link">
+                <a href="../../index.html">← Back to Full Comparison Table</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>Content generated using AI | <a href="https://github.com/srix/prog-lang-compare" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>
