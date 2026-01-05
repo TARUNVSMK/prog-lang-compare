@@ -1,6 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Programming Language Comparison - Side by Side Concept Reference</title>
+    <meta name="title" content="Programming Language Comparison - Side by Side Concept Reference">
+    <meta name="description" content="Compare programming concepts across 23+ languages side by side. Learn syntax differences for variables, loops, functions, classes, and more in Python, JavaScript, Rust, Java, Go, and other popular languages.">
+    <meta name="keywords" content="programming language comparison, syntax comparison, Python vs JavaScript, Rust vs Go, programming concepts, language reference, code examples, multi-language comparison">
+    <meta name="author" content="Prog Lang Compare">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://srix.github.io/prog-lang-compare/">
+    <meta property="og:title" content="Programming Language Comparison - Side by Side Concept Reference">
+    <meta property="og:description" content="Compare programming concepts across 23+ languages side by side. Learn syntax differences for variables, loops, functions, classes, and more.">
+    <meta property="og:image" content="https://srix.github.io/prog-lang-compare/social-preview.png">
+    <meta property="og:site_name" content="Prog Lang Compare">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://srix.github.io/prog-lang-compare/">
+    <meta property="twitter:title" content="Programming Language Comparison - Side by Side Concept Reference">
+    <meta property="twitter:description" content="Compare programming concepts across 23+ languages side by side. Learn syntax differences for variables, loops, functions, classes, and more.">
+    <meta property="twitter:image" content="https://srix.github.io/prog-lang-compare/social-preview.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://srix.github.io/prog-lang-compare/">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0E6QSYD2C"></script>
     <script>
@@ -10,7 +39,7 @@
 
         gtag('config', 'G-V0E6QSYD2C');
     </script>
-    
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link rel="stylesheet" type="text/css" 
@@ -75,25 +104,93 @@
         }
 
     </style>
+
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebApplication",
+                "name": "Prog Lang Compare",
+                "url": "https://srix.github.io/prog-lang-compare/",
+                "description": "Compare programming concepts across 23+ languages side by side. Learn syntax differences for variables, loops, functions, classes, and more.",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Any",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Prog Lang Compare"
+                }
+            },
+            {
+                "@type": "Dataset",
+                "name": "Programming Language Concepts Comparison Dataset",
+                "description": "AI-generated explanations and code examples for programming concepts across 23+ languages including Python, JavaScript, Rust, Java, Go, TypeScript, Ruby, Swift, Kotlin, and more.",
+                "url": "https://srix.github.io/prog-lang-compare/",
+                "keywords": [
+                    "programming languages",
+                    "syntax comparison",
+                    "code examples",
+                    "Python",
+                    "JavaScript",
+                    "Rust",
+                    "Java",
+                    "Go",
+                    "TypeScript"
+                ],
+                "creator": {
+                    "@type": "Organization",
+                    "name": "Prog Lang Compare"
+                },
+                "license": "https://github.com/srix/prog-lang-compare",
+                "distribution": {
+                    "@type": "DataDownload",
+                    "contentUrl": "https://github.com/srix/prog-lang-compare"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://srix.github.io/prog-lang-compare/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
+    <!-- Table of Contents Sidebar -->
+    <aside class="sidebar" role="navigation" aria-label="Table of Contents">
         <div id='toc'></div>
-        
-    </div>
+    </aside>
 
     <!-- Main content -->
-    <div class="content">
-       <p>A side by side comparison of popular programming languages. The content is generated using openai chatgpt-4 llm. If you find the page useful leave a star rating at the github project <a href="https://github.com/srix/prog-lang-compare" target="_blank"> here</a>.</p>
-    <div id="toggle">
-        Select Language: 
-        <!-- Langauage toggle anchor tag will be inserted here -->
-    </div>
-    </br>
-    <table id="langTable" class="display"></table>
+    <main class="content">
+        <header>
+            <h1>Programming Language Comparison</h1>
+            <p>A side by side comparison of popular programming languages. The content is generated using openai chatgpt-4 llm. If you find the page useful leave a star rating at the github project <a href="https://github.com/srix/prog-lang-compare" target="_blank" rel="noopener noreferrer">here</a>.</p>
+        </header>
 
-    <script src="script.js"></script>
-    </div>
+        <nav id="toggle" aria-label="Language Selection">
+            <strong>Select Language:</strong>
+            <!-- Language toggle anchor tags will be inserted here -->
+        </nav>
+
+        <section aria-label="Programming Concepts Comparison Table">
+            <table id="langTable" class="display" role="grid"></table>
+        </section>
+
+        <script src="script.js"></script>
+    </main>
 </body>
 </html>

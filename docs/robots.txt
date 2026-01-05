@@ -1,0 +1,11 @@
+# robots.txt for Prog Lang Compare
+# Allow all crawlers to index all content
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://srix.github.io/prog-lang-compare/sitemap.xml
+
+# Crawl-delay (optional, adjust if needed)
+# Crawl-delay: 1
