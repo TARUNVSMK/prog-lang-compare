@@ -79,6 +79,13 @@ def generate_sitemap():
             # Convert to URL
             url_path = rel_path.replace(os.sep, '/')
 
+            # Determine if this is a language landing page (concepts/{lang}.html)
+            # vs a concept page (concepts/{lang}/{concept}.html)
+            path_parts = rel_path.split(os.sep)
+            is_language_landing = (len(path_parts) == 2 and
+                                 path_parts[0] == 'concepts' and
+                                 path_parts[1].endswith('.html'))
+
             # Create URL entry
             url = SubElement(urlset, 'url')
             loc = SubElement(url, 'loc')
@@ -88,10 +95,10 @@ def generate_sitemap():
             lastmod.text = get_git_last_modified(html_file)
 
             changefreq = SubElement(url, 'changefreq')
-            changefreq.text = 'monthly'
+            changefreq.text = 'weekly' if is_language_landing else 'monthly'
 
             priority = SubElement(url, 'priority')
-            priority.text = '0.8'
+            priority.text = '0.9' if is_language_landing else '0.8'
 
             page_count += 1
 

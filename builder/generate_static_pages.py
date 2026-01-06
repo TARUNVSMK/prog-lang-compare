@@ -7,6 +7,8 @@ This creates 2,512 SEO-friendly pages that search engines can index.
 import os
 import json
 import re
+import subprocess
+import datetime
 from helper import load_from_yaml, get_safename
 
 # Paths
@@ -27,6 +29,34 @@ def slugify(text):
     # Replace whitespace with hyphens
     slug = re.sub(r'[-\s]+', '-', slug)
     return slug.strip('-')
+
+
+def get_last_modified_date(file_path):
+    """Get last modified date from git history or filesystem."""
+    try:
+        # Try to get date from git
+        result = subprocess.run(
+            ['git', 'log', '-1', '--format=%cI', file_path],
+            capture_output=True,
+            text=True,
+            cwd=os.path.dirname(__file__)
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            # Extract date part (YYYY-MM-DD)
+            return result.stdout.strip().split('T')[0]
+    except:
+        pass
+
+    # Fallback to file modification time
+    try:
+        if os.path.exists(file_path):
+            mtime = os.path.getmtime(file_path)
+            return datetime.datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
+    except:
+        pass
+
+    # Final fallback
+    return datetime.datetime.now().strftime('%Y-%m-%d')
 
 
 def markdown_to_html(markdown_text):
@@ -68,7 +98,55 @@ def markdown_to_html(markdown_text):
     return html
 
 
-def generate_page_template(language, concept_key, concept_title, content_html, category):
+def generate_related_languages_section(current_language, concept_slug, all_languages):
+    """Generate HTML section showing this concept in other languages."""
+    if not all_languages:
+        return ""
+
+    # Filter out current language
+    other_languages = [lang for lang in all_languages if lang != current_language]
+
+    if not other_languages:
+        return ""
+
+    # Generate language links
+    language_links = []
+    for lang in other_languages:
+        lang_slug = slugify(lang)
+        lang_display = lang.replace('_', ' ')
+        language_links.append(
+            f'<a href="../{lang_slug}/{concept_slug}.html">{lang_display}</a>'
+        )
+
+    links_html = ''.join(language_links)
+
+    return f"""
+            <section class="related-concepts" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+                <h2 style="font-size: 20px; margin-bottom: 15px; color: #2c3e50;">See this concept in other languages</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px;">
+                    {links_html}
+                </div>
+                <style>
+                    .related-concepts a {{
+                        padding: 8px 12px;
+                        background: #f5f5f5;
+                        border-radius: 4px;
+                        text-decoration: none;
+                        color: #0066cc;
+                        display: inline-block;
+                        text-align: center;
+                        transition: background 0.2s, transform 0.2s;
+                    }}
+                    .related-concepts a:hover {{
+                        background: #e5e7eb;
+                        transform: translateY(-2px);
+                    }}
+                </style>
+            </section>
+"""
+
+
+def generate_page_template(language, concept_key, concept_title, content_html, category, all_languages=None):
     """Generate HTML template for a concept page."""
 
     # Parse concept key to get readable title
@@ -89,6 +167,11 @@ def generate_page_template(language, concept_key, concept_title, content_html, c
     concept_slug = slugify(concept_key)
     language_slug = slugify(language)
     page_url = f"{BASE_URL}/concepts/{language_slug}/{concept_slug}.html"
+
+    # Get last modified date from git or filesystem
+    safe_lang_name = get_safename(language)
+    json_file = os.path.join(CONTENT_DIR, f"{safe_lang_name}.json")
+    date_modified = get_last_modified_date(json_file)
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -249,7 +332,7 @@ def generate_page_template(language, concept_key, concept_title, content_html, c
         "keywords": "{language}, {concept_title}, programming",
         "url": "{page_url}",
         "datePublished": "2023-06-09",
-        "dateModified": "2023-06-09",
+        "dateModified": "{date_modified}",
         "author": {{
             "@type": "Organization",
             "name": "Prog Lang Compare"
@@ -289,6 +372,8 @@ def generate_page_template(language, concept_key, concept_title, content_html, c
             <article class="content">
                 {content_html}
             </article>
+
+            {generate_related_languages_section(language, concept_slug, all_languages) if all_languages else ""}
 
             <div class="back-link">
                 <a href="../../index.html">← Back to Full Comparison Table</a>
@@ -372,7 +457,8 @@ def generate_all_pages():
                 concept_key=concept_key,
                 concept_title=concept_key.replace('_', ' '),
                 content_html=content_html,
-                category=category
+                category=category,
+                all_languages=languages
             )
 
             # Save page

@@ -1,11 +1,13 @@
 # robots.txt for Prog Lang Compare
-# Allow all crawlers to index all content
 
 User-agent: *
 Allow: /
 
+# Prevent indexing of raw JSON data
+Disallow: /content-autogen/
+
 # Sitemap location
 Sitemap: https://srix.github.io/prog-lang-compare/sitemap.xml
 
-# Crawl-delay (optional, adjust if needed)
-# Crawl-delay: 1
+# Crawl rate
+Crawl-delay: 1

@@ -218,32 +218,42 @@ async function loadLangConceptsInColumn(tableId, progLang) {
 
     let fileurl = 'content-autogen/gpt_3_5_turbo/' + getSafeName(progLang) + '.json';
     let mergedContent = {};
-    fetch(fileurl)
-        .then(response => response.text())
-        .then(filecontent => {
-            mergedContent = JSON.parse(filecontent);
-            mytable.rows().every(function () {
-                // Get the data for this row
-                var data = this.data();
 
-                let concept = data['concept'];
-                let subconcept = data['subconcept'];
-                // Update the value of the cell in the target column
-                let safeProglang = getSafeName(progLang)
-                let key = getSafeName(concept) + '_' + getSafeName(subconcept);
-                data[safeProglang] = marked(mergedContent[key]);
-                this.invalidate().draw();
+    try {
+        const response = await fetch(fileurl);
 
-            });
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: Failed to load ${progLang}`);
+        }
 
-            loadedColumns.push(progLang);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
+        const filecontent = await response.text();
+        mergedContent = JSON.parse(filecontent);
+
+        mytable.rows().every(function () {
+            // Get the data for this row
+            var data = this.data();
+
+            let concept = data['concept'];
+            let subconcept = data['subconcept'];
+            // Update the value of the cell in the target column
+            let safeProglang = getSafeName(progLang)
+            let key = getSafeName(concept) + '_' + getSafeName(subconcept);
+            data[safeProglang] = marked(mergedContent[key] || '');
+            this.invalidate().draw();
+
         });
 
+        loadedColumns.push(progLang);
+    } catch (error) {
+        console.error(`Failed to load ${progLang}:`, error);
 
-
+        // Show error in table cells
+        mytable.rows().every(function () {
+            var data = this.data();
+            data[getSafeName(progLang)] = `<em style="color: #999;">Error loading content. Please refresh the page.</em>`;
+            this.invalidate().draw();
+        });
+    }
 }
 
 function getSafeName(value) {
