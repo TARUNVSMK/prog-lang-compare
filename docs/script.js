@@ -117,17 +117,11 @@ async function showEmptyTable(tableId, conceptsData, prog_lang_list) {
 
 
 
-    // Creating Concerpts, concept, subconept column definitions
-    // Concepts is the visible column. 
-    // concept and subconcept are hidden columns used to create filenames later
-    columns.push({
-        title: 'Concepts', name: 'Concepts', data: 'Concepts', width: '20ch',
-        "createdCell": function (td, cellData, rowData, row, col) {
-            $(td).css('font-weight', 'bold');
-        }
-    },   //copilot suggested this !!!
+    // Creating hidden concept and subconcept columns for TOC navigation
+    // These are used to create filenames and for the left sidebar TOC
+    columns.push(
         { title: 'concept', name: 'concept', data: 'concept', visible: false }, // hidden column
-        { title: 'subconcept', name: 'subconcept', data: 'subconcept', visible: false }, //hidden column
+        { title: 'subconcept', name: 'subconcept', data: 'subconcept', visible: false } //hidden column
     );
 
 
@@ -145,10 +139,9 @@ async function showEmptyTable(tableId, conceptsData, prog_lang_list) {
     }
 
 
-    // Populating the diciotnary with the data
-    //Creating a three column row temporarily
+    // Populating the dictionary with the data
+    // Creating rows with hidden concept and subconcept columns for TOC navigation
     let rows = conceptsData.map(item => ({
-        'Concepts': `${item.concept}  -  ${item.subconcept}`,
         'concept': `${item.concept}`,
         'subconcept': `${item.subconcept}`
     }));

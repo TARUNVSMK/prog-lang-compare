@@ -1,0 +1,17 @@
+Programming Language Comparison
+Copyright 2026 Programming Language Comparison Contributors
+
+This product includes software developed by the Programming Language Comparison project
+(https://github.com/srix/prog-lang-compare).
+
+This project was inspired by and includes concept ideas from:
+- lang-compare by Evgeny Morozov (https://github.com/evmorov/lang-compare)
+
+The content for programming language concepts is generated using:
+- OpenAI GPT-3.5 Turbo API
+
+Third-party dependencies used in this project are listed in requirements.txt (Python)
+and are loaded via CDN for frontend components (JavaScript libraries).
+
+This software is distributed under the Apache License 2.0.
+See the LICENSE file for the full license text.

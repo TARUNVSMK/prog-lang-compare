@@ -235,7 +235,21 @@ GitHub Pages automatically publishes from the `docs/` folder on the `main` branc
 
 ## License
 
-[Add your license here]
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+### What This Means
+
+You are free to:
+- ✅ Use this project commercially
+- ✅ Modify and distribute
+- ✅ Use privately
+- ✅ Include patent grants
+
+Under these conditions:
+- 📄 Include a copy of the license
+- 📝 State changes made to the code
+- 🔒 Include original copyright notices
+- ⚖️ Don't hold contributors liable
 
 ---
 
