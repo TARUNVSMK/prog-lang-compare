@@ -351,10 +351,18 @@ function addTocHtml(conceptsData) {
         
                 a.onclick = function (e) {
                     e.preventDefault();
-        
+
+                    // Remove active class from all TOC items
+                    document.querySelectorAll('.toggle-vis').forEach(el => {
+                        el.classList.remove('active');
+                    });
+
+                    // Add active class to clicked item
+                    this.classList.add('active');
+
                     // Get the DataTable instance
                     const table = $('#langTable').DataTable();
-                    
+
                     // Specify the row index to scroll to
                     let rowIndex = $(this).attr('rowIndex');
 
@@ -365,7 +373,7 @@ function addTocHtml(conceptsData) {
                     $('html, body').animate({
                         scrollTop: $(rowNode).offset().top
                     }, 500);
-        
+
                 };
 
                 
