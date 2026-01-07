@@ -263,8 +263,7 @@ function getSafeName(value) {
 }
 
 function addLangToggle(prog_lang_list) {
-    const activeContainer = document.getElementById('activeLanguages');
-    const allContainer = document.getElementById('allLanguages');
+    const container = document.getElementById('allLanguages');
 
     // Creating toggle for each language
     for (let lang of prog_lang_list.sort()) {
@@ -302,14 +301,7 @@ function addLangToggle(prog_lang_list) {
             }
         };
 
-        // Add to active or all container
-        if (defaultShowLangs.includes(columnTitle)) {
-            activeContainer.appendChild(a.cloneNode(true));
-            // Re-attach event handler to cloned node
-            activeContainer.lastChild.onclick = a.onclick;
-        }
-
-        allContainer.appendChild(a);
+        container.appendChild(a);
     }
 }
 
@@ -464,19 +456,6 @@ function addTocHtml(conceptsData) {
             if (event.target.tagName === 'A' && window.innerWidth <= 768) {
                 closeMenu();
             }
-        });
-    }
-})();
-
-// Language Selector Expand/Collapse
-(function initLanguageExpander() {
-    const expandButton = document.getElementById('expandLanguages');
-    const allLanguagesSection = document.getElementById('allLanguagesSection');
-
-    if (expandButton && allLanguagesSection) {
-        expandButton.addEventListener('click', function() {
-            allLanguagesSection.classList.toggle('expanded');
-            this.textContent = allLanguagesSection.classList.contains('expanded') ? 'Show Less' : 'Show All';
         });
     }
 })();

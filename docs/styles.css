@@ -259,9 +259,6 @@ header a:hover {
 }
 
 .language-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 16px 20px;
     background: var(--bg-tertiary);
     border-bottom: 1px solid var(--border-color);
@@ -273,57 +270,14 @@ header a:hover {
     font-weight: 600;
 }
 
-.expand-toggle {
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius-sm);
-    padding: 6px 12px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 500;
-}
-
-.expand-toggle:hover {
-    background: var(--primary-hover);
-}
-
 .language-container {
     padding: 16px;
-}
-
-.language-section {
-    margin-bottom: 12px;
-}
-
-.language-section:last-child {
-    margin-bottom: 0;
-}
-
-.language-section-title {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
 }
 
 .language-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-}
-
-.all-languages {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.all-languages.expanded {
-    max-height: 500px;
 }
 
 .toggle-vis {
