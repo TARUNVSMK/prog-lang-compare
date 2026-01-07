@@ -2,7 +2,7 @@
 
 A side-by-side comparison of popular programming languages. Compare syntax and concepts across 21+ programming languages including Python, JavaScript, Rust, Java, Go, and more.
 
-🌐 **Live Site**: [https://srix.github.io/prog-lang-compare/](https://srix.github.io/prog-lang-compare/)
+🌐 **Live Site**: [https://prog-lang-compare.netlify.app](https://prog-lang-compare.netlify.app)
 
 ## Features
 
@@ -245,7 +245,7 @@ Licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.
 
 ## Links
 
-- 🌐 [Live Website](https://srix.github.io/prog-lang-compare/)
+- 🌐 [Live Website](https://prog-lang-compare.netlify.app)
 - 📦 [GitHub Repository](https://github.com/srix/prog-lang-compare)
 - 🐛 [Report Issues](https://github.com/srix/prog-lang-compare/issues)
 - 📖 [Testing Guide](TESTING.md)

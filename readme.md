@@ -2,7 +2,7 @@
 
 Compare programming concepts across 23+ languages side by side with AI-generated explanations and code examples.
 
-**🌐 Live Site**: [https://srix.github.io/prog-lang-compare/](https://srix.github.io/prog-lang-compare/)
+**🌐 Live Site**: [https://prog-lang-compare.netlify.app](https://prog-lang-compare.netlify.app)
 
 ---
 
@@ -67,8 +67,8 @@ cd docs && python -m http.server 8000
 
 ```mermaid
 flowchart TD
-    github(GitHub Pages) --> |https://srix.github.io/prog-lang-compare/|browser[Browser]
-    docs(docs/) -->github
+    netlify(Netlify) --> |https://prog-lang-compare.netlify.app|browser[Browser]
+    docs(docs/) -->netlify
 
 subgraph build[Build Pipeline]
     openai(OpenAI API) -->|concurrent requests|builder(builder/)
@@ -174,7 +174,7 @@ python builder/main.py
 
 ## Deployment
 
-The site auto-deploys from the `docs/` directory on GitHub Pages.
+The site auto-deploys from the `docs/` directory on Netlify.
 
 **To deploy changes:**
 ```bash
@@ -186,7 +186,7 @@ git commit -m "feat: Update language comparison content
 git push origin main
 ```
 
-GitHub Pages automatically publishes from the `docs/` folder on the `main` branch.
+Netlify automatically publishes from the `docs/` folder on the `main` branch.
 
 ---
 
@@ -205,7 +205,7 @@ GitHub Pages automatically publishes from the `docs/` folder on the `main` branc
 - **Highlight.js** - Syntax highlighting for code blocks
 
 ### Infrastructure
-- **GitHub Pages** - Free hosting
+- **Netlify** - Free hosting with automatic deployments
 - **GitHub Actions** - CI/CD (planned)
 
 ---

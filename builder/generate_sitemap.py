@@ -16,7 +16,7 @@ CONCEPTS_DIR = os.path.join(DOCS_DIR, 'concepts')
 SITEMAP_FILE = os.path.join(DOCS_DIR, 'sitemap.xml')
 
 # Base URL
-BASE_URL = 'https://srix.github.io/prog-lang-compare'
+BASE_URL = 'https://prog-lang-compare.netlify.app'
 
 
 def get_git_last_modified(file_path):

@@ -33,7 +33,7 @@ PROG_LANGS_YAML = os.path.join(DOCS_DIR, 'prog_langs.yaml')
 PROG_CONCEPTS_YAML = os.path.join(DOCS_DIR, 'prog_lang_concepts.yaml')
 
 # Base URL for canonical links
-BASE_URL = 'https://srix.github.io/prog-lang-compare'
+BASE_URL = 'https://prog-lang-compare.netlify.app'
 
 
 def slugify(text):

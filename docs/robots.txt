@@ -7,4 +7,4 @@ Allow: /
 Disallow: /content-autogen/
 
 # Sitemap location
-Sitemap: https://srix.github.io/prog-lang-compare/sitemap.xml
+Sitemap: https://prog-lang-compare.netlify.app/sitemap.xml

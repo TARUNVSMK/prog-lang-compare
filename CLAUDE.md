@@ -4,10 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a programming language comparison website that generates AI-powered content comparing syntax and concepts across 23+ programming languages. The site is deployed to GitHub Pages at https://srix.github.io/prog-lang-compare/
+This is a programming language comparison website that generates AI-powered content comparing syntax and concepts across 23+ programming languages. The site is deployed to Netlify at https://prog-lang-compare.netlify.app
 
 **Architecture:**
-- **Static Site**: Hosted on GitHub Pages from the `docs/` directory
+- **Static Site**: Hosted on Netlify from the `docs/` directory
 - **AI Content Generation**: Python builder scripts use OpenAI API to generate language concept explanations
 - **Caching System**: Prevents regenerating unchanged content
 - **SEO Optimization**: Generates 2,500+ static HTML pages for search engine indexing
@@ -116,7 +116,7 @@ The `.env` file contains OpenAI API credentials:
 ## Directory Structure
 
 ```
-docs/                           # GitHub Pages deployment directory
+docs/                           # Netlify deployment directory
 ├── index.html                  # Main comparison table (loads dynamically)
 ├── script.js                   # Frontend JS for interactive table
 ├── prog_lang_concepts.yaml     # Concept definitions with prompts
@@ -192,7 +192,7 @@ The main page dynamically loads language JSON files and renders an interactive c
 
 ## Deployment
 
-The site auto-deploys from the `docs/` directory on the `main` branch via GitHub Pages. After regenerating content:
+The site auto-deploys from the `docs/` directory on the `main` branch via Netlify. After regenerating content:
 
 ```bash
 git add docs/
