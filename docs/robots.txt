@@ -8,6 +8,3 @@ Disallow: /content-autogen/
 
 # Sitemap location
 Sitemap: https://srix.github.io/prog-lang-compare/sitemap.xml
-
-# Crawl rate
-Crawl-delay: 1
