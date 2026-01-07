@@ -550,8 +550,91 @@ function addTocHtml(conceptsData) {
     addCopyButtonsToCodeBlocks(document.body);
 })();
 
-// Smooth scroll behavior for table rows
-(function initSmoothScroll() {
-    // Already handled in addTocHtml function
-    // This is just a placeholder for any additional scroll enhancements
+// Scroll Spy - Highlight TOC item based on scroll position
+(function initScrollSpy() {
+    let isScrolling = false;
+    let userClicked = false;
+    let clickTimeout;
+
+    function updateActiveTocItem() {
+        if (userClicked) return; // Don't update during user interaction
+
+        const table = $('#langTable').DataTable();
+        if (!table || table.rows().count() === 0) return;
+
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+        const triggerPoint = scrollTop + windowHeight / 3; // Activate when row is 1/3 down the viewport
+
+        let activeRowIndex = -1;
+
+        // Find which row is currently in view
+        table.rows().every(function(index) {
+            const rowNode = this.node();
+            if (!rowNode) return;
+
+            const rowTop = $(rowNode).offset().top;
+            const rowBottom = rowTop + $(rowNode).height();
+
+            // Check if this row is in the trigger zone
+            if (rowTop <= triggerPoint && rowBottom > scrollTop) {
+                activeRowIndex = index;
+                return false; // Break the loop
+            }
+        });
+
+        if (activeRowIndex >= 0) {
+            // Remove active class from all TOC items (only in TOC sidebar)
+            $('#toc a.toggle-vis').removeClass('active');
+
+            // Add active class to the corresponding TOC item
+            const tocItem = $(`#toc a.toggle-vis[rowIndex="${activeRowIndex}"]`);
+            if (tocItem.length > 0) {
+                tocItem.addClass('active');
+
+                // Auto-scroll the sidebar to keep active item visible
+                const sidebar = document.querySelector('.sidebar');
+                const tocElement = tocItem[0];
+                if (sidebar && tocElement) {
+                    const sidebarRect = sidebar.getBoundingClientRect();
+                    const tocRect = tocElement.getBoundingClientRect();
+
+                    // Check if TOC item is outside visible sidebar area
+                    if (tocRect.top < sidebarRect.top || tocRect.bottom > sidebarRect.bottom) {
+                        tocElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                }
+            }
+        }
+    }
+
+    // Debounce scroll events for performance
+    let scrollTimeout;
+    $(window).on('scroll', function() {
+        if (!isScrolling) {
+            isScrolling = true;
+        }
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function() {
+            updateActiveTocItem();
+            isScrolling = false;
+        }, 100); // Update every 100ms while scrolling
+    });
+
+    // Handle manual TOC clicks
+    $(document).on('click', '#toc a.toggle-vis', function() {
+        // Prevent auto-update for 1.5 seconds after user clicks
+        userClicked = true;
+        clearTimeout(clickTimeout);
+        clickTimeout = setTimeout(function() {
+            userClicked = false;
+        }, 1500);
+    });
+
+    // Initial update after table loads
+    setTimeout(updateActiveTocItem, 1000);
 })();
