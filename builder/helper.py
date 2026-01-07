@@ -25,5 +25,16 @@ def save_to_yaml(filepath, content):
 
 
 def get_safename(value):
-    trans_table = str.maketrans('. ,-?()/\\', '_________')
+    # Special case mappings for languages with problematic characters
+    special_mappings = {
+        'C#': 'csharp',
+        'C++': 'cpp',
+    }
+
+    # Check if value matches a special case (exact match)
+    if value in special_mappings:
+        return special_mappings[value]
+
+    # Generic character translation for other cases
+    trans_table = str.maketrans('. ,-?()/\\#+', '___________')
     return value.translate(trans_table)
