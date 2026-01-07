@@ -1,0 +1,27 @@
+{
+  "name": "prog-lang-compare",
+  "version": "1.0.0",
+  "description": "Programming Language Comparison - Side by side comparison of popular programming languages",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srix/prog-lang-compare"
+  },
+  "keywords": [
+    "programming",
+    "languages",
+    "comparison",
+    "syntax"
+  ],
+  "author": "Prog Lang Compare",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
