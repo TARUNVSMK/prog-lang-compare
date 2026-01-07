@@ -243,7 +243,7 @@ async function loadLangConceptsInColumn(tableId, progLang) {
         // Show error in table cells
         mytable.rows().every(function () {
             var data = this.data();
-            data[getSafeName(progLang)] = `<em style="color: #999;">Error loading content. Please refresh the page.</em>`;
+            data[getSafeName(progLang)] = `<em class="error-message">Error loading content. Please refresh the page.</em>`;
             this.invalidate().draw();
         });
     }

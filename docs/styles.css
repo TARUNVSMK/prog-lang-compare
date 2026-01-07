@@ -143,6 +143,7 @@ body {
     width: 24px;
     height: 24px;
     display: block;
+    stroke: currentColor;
 }
 
 /* ========================================
@@ -153,6 +154,7 @@ body {
     padding: 32px;
     transition: var(--transition);
     min-height: 100vh;
+    position: relative;
 }
 
 /* ========================================
@@ -217,10 +219,10 @@ header a:hover {
    DARK MODE TOGGLE
    ======================================== */
 .theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    z-index: 100;
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-sm);
@@ -241,6 +243,8 @@ header a:hover {
 .theme-toggle svg {
     width: 20px;
     height: 20px;
+    stroke: var(--text-primary);
+    color: var(--text-primary);
 }
 
 /* ========================================
@@ -361,6 +365,20 @@ header a:hover {
     padding: 24px;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Ensure all DataTables text is visible in dark mode */
+.dataTables_wrapper * {
+    color: inherit;
+}
+
+.dataTables_wrapper label,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate,
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+    color: var(--text-primary);
 }
 
 .dataTables_wrapper .dataTable {
@@ -388,21 +406,68 @@ header a:hover {
 .dataTables_wrapper .dataTable tbody tr {
     transition: var(--transition);
     border-bottom: 1px solid var(--border-color);
+    background: var(--bg-primary) !important;
+}
+
+.dataTables_wrapper .dataTable tbody tr.odd,
+.dataTables_wrapper .dataTable tbody tr.even {
+    background: var(--bg-primary) !important;
 }
 
 .dataTables_wrapper .dataTable tbody tr:hover {
-    background: var(--bg-secondary);
+    background: var(--bg-secondary) !important;
 }
 
 .dataTables_wrapper .dataTable td {
     vertical-align: top;
     padding: 16px;
+    color: var(--text-primary) !important;
+    background-color: transparent !important;
+}
+
+/* Ensure markdown content in table cells is visible */
+.dataTables_wrapper .dataTable td p,
+.dataTables_wrapper .dataTable td li,
+.dataTables_wrapper .dataTable td div,
+.dataTables_wrapper .dataTable td h1,
+.dataTables_wrapper .dataTable td h2,
+.dataTables_wrapper .dataTable td h3,
+.dataTables_wrapper .dataTable td h4,
+.dataTables_wrapper .dataTable td h5,
+.dataTables_wrapper .dataTable td h6 {
     color: var(--text-primary);
+    background: transparent;
+}
+
+.dataTables_wrapper .dataTable td a {
+    color: var(--primary) !important;
+}
+
+.dataTables_wrapper .dataTable td a:hover {
+    color: var(--primary-hover) !important;
+}
+
+.dataTables_wrapper .dataTable td em {
+    color: inherit !important;
+}
+
+.dataTables_wrapper .dataTable td strong {
+    color: inherit !important;
+}
+
+.dataTables_wrapper .dataTable td ul,
+.dataTables_wrapper .dataTable td ol {
+    background: transparent;
 }
 
 .dataTables_wrapper .dataTables_filter {
     float: left;
     margin-bottom: 16px;
+}
+
+.dataTables_wrapper .dataTables_filter label {
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .dataTables_wrapper .dataTables_filter input {
@@ -414,9 +479,43 @@ header a:hover {
     margin-left: 8px;
 }
 
+.dataTables_wrapper .dataTables_filter input::placeholder {
+    color: var(--text-tertiary);
+    opacity: 0.7;
+}
+
 .dataTables_wrapper .dataTables_filter input:focus {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
+}
+
+/* Additional DataTables UI elements for dark mode */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate {
+    color: var(--text-primary) !important;
+}
+
+.dataTables_wrapper .dataTables_length label,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate .paginate_button,
+.dataTables_wrapper .dataTables_processing {
+    color: var(--text-primary) !important;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 4px 8px;
+    color: var(--text-primary);
+    margin: 0 8px;
+}
+
+/* Force all text elements to use theme colors */
+.dataTables_wrapper .dataTables_filter label,
+.dataTables_wrapper .dataTables_filter input::placeholder {
+    color: var(--text-primary) !important;
 }
 
 /* ========================================
@@ -424,7 +523,7 @@ header a:hover {
    ======================================== */
 pre {
     overflow-x: auto;
-    background-color: var(--code-bg);
+    background-color: var(--code-bg) !important;
     border: 1px solid var(--code-border);
     border-radius: var(--border-radius-sm);
     padding: 16px;
@@ -432,10 +531,183 @@ pre {
     position: relative;
 }
 
+/* Code blocks inside table cells */
+.dataTables_wrapper .dataTable td pre {
+    background-color: var(--code-bg) !important;
+}
+
+.dataTables_wrapper .dataTable td pre code {
+    /* Don't override syntax highlighting colors */
+}
+
+/* Allow syntax highlighting in table cells */
+.dataTables_wrapper .dataTable td code.hljs,
+.dataTables_wrapper .dataTable td code.hljs * {
+    color: inherit;
+}
+
 pre code {
     font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
     font-size: 14px;
     line-height: 1.5;
+    color: var(--text-primary);
+    display: block;
+    overflow-x: auto;
+}
+
+/* Base highlight.js styling for light mode */
+code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+    color: #383a42 !important;
+    background: transparent !important;
+}
+
+.hljs-comment,
+.hljs-quote {
+    color: #a0a1a7 !important;
+    font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+    color: #a626a4 !important;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+    color: #e45649 !important;
+}
+
+.hljs-literal {
+    color: #0184bb !important;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+    color: #50a14f !important;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+    color: #986801 !important;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+    color: #4078f2 !important;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+    color: #c18401 !important;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+.hljs-link {
+    text-decoration: underline;
+}
+
+/* Syntax highlighting for dark mode - One Dark theme */
+[data-theme="dark"] code.hljs {
+    color: #abb2bf !important;
+    background: transparent !important;
+}
+
+[data-theme="dark"] .hljs-comment,
+[data-theme="dark"] .hljs-quote {
+    color: #5c6370 !important;
+    font-style: italic;
+}
+
+[data-theme="dark"] .hljs-doctag,
+[data-theme="dark"] .hljs-keyword,
+[data-theme="dark"] .hljs-formula {
+    color: #c678dd !important;
+}
+
+[data-theme="dark"] .hljs-section,
+[data-theme="dark"] .hljs-name,
+[data-theme="dark"] .hljs-selector-tag,
+[data-theme="dark"] .hljs-deletion,
+[data-theme="dark"] .hljs-subst {
+    color: #e06c75 !important;
+}
+
+[data-theme="dark"] .hljs-literal {
+    color: #56b6c2 !important;
+}
+
+[data-theme="dark"] .hljs-string,
+[data-theme="dark"] .hljs-regexp,
+[data-theme="dark"] .hljs-addition,
+[data-theme="dark"] .hljs-attribute,
+[data-theme="dark"] .hljs-meta .hljs-string {
+    color: #98c379 !important;
+}
+
+[data-theme="dark"] .hljs-attr,
+[data-theme="dark"] .hljs-variable,
+[data-theme="dark"] .hljs-template-variable,
+[data-theme="dark"] .hljs-type,
+[data-theme="dark"] .hljs-selector-class,
+[data-theme="dark"] .hljs-selector-attr,
+[data-theme="dark"] .hljs-selector-pseudo,
+[data-theme="dark"] .hljs-number {
+    color: #d19a66 !important;
+}
+
+[data-theme="dark"] .hljs-symbol,
+[data-theme="dark"] .hljs-bullet,
+[data-theme="dark"] .hljs-link,
+[data-theme="dark"] .hljs-meta,
+[data-theme="dark"] .hljs-selector-id,
+[data-theme="dark"] .hljs-title {
+    color: #61afef !important;
+}
+
+[data-theme="dark"] .hljs-built_in,
+[data-theme="dark"] .hljs-title.class_,
+[data-theme="dark"] .hljs-class .hljs-title {
+    color: #e5c07b !important;
+}
+
+[data-theme="dark"] .hljs-emphasis {
+    font-style: italic;
+}
+
+[data-theme="dark"] .hljs-strong {
+    font-weight: bold;
+}
+
+[data-theme="dark"] .hljs-link {
+    text-decoration: underline;
 }
 
 /* Copy Button for Code Blocks */
@@ -542,6 +814,12 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Error message styling */
+.error-message {
+    color: var(--text-tertiary);
+    font-style: italic;
+}
+
 /* Mobile Sidebar Overlay */
 .sidebar-overlay {
     display: none;
@@ -570,8 +848,8 @@ footer a:hover {
     }
 
     .theme-toggle {
-        top: 20px;
-        right: 16px;
+        top: 24px;
+        right: 20px;
     }
 
     .sidebar {
