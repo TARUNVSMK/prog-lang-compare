@@ -387,9 +387,156 @@ function addTocHtml(conceptsData) {
             conceptsUl.appendChild(subconceptsUl);
             tocDiv.appendChild(conceptsUl);
 
-        
+
     });
 
 
-   
+
 }
+
+/* ========================================
+   MODERN UI ENHANCEMENTS
+   ======================================== */
+
+// Dark Mode Toggle
+(function initDarkMode() {
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+    const html = document.documentElement;
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    updateIcons(savedTheme);
+
+    function updateIcons(theme) {
+        if (theme === 'dark') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        } else {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+    }
+
+    function toggleTheme() {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateIcons(newTheme);
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+})();
+
+// Mobile Menu Toggle
+(function initMobileMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    function toggleMenu() {
+        sidebar.classList.toggle('active');
+    }
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMenu);
+    }
+
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        const isClickInside = sidebar.contains(event.target) || menuToggle.contains(event.target);
+
+        if (!isClickInside && window.innerWidth <= 768 && sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+        }
+    });
+
+    // Close sidebar when clicking a link on mobile
+    if (sidebar) {
+        sidebar.addEventListener('click', function(event) {
+            if (event.target.tagName === 'A' && window.innerWidth <= 768) {
+                sidebar.classList.remove('active');
+            }
+        });
+    }
+})();
+
+// Copy to Clipboard for Code Blocks
+(function initCodeCopy() {
+    // Watch for code blocks being added to the page
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+                if (node.nodeType === 1) { // Element node
+                    addCopyButtonsToCodeBlocks(node);
+                }
+            });
+        });
+    });
+
+    // Start observing the table for changes
+    const table = document.getElementById('langTable');
+    if (table) {
+        observer.observe(table, {
+            childList: true,
+            subtree: true
+        });
+    }
+
+    function addCopyButtonsToCodeBlocks(container) {
+        const codeBlocks = container.querySelectorAll('pre');
+
+        codeBlocks.forEach(function(pre) {
+            // Skip if button already exists
+            if (pre.querySelector('.copy-button')) {
+                return;
+            }
+
+            // Create wrapper if not already wrapped
+            if (!pre.parentElement.classList.contains('code-block-wrapper')) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'code-block-wrapper';
+                pre.parentNode.insertBefore(wrapper, pre);
+                wrapper.appendChild(pre);
+            }
+
+            // Create copy button
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copy';
+            button.setAttribute('aria-label', 'Copy code to clipboard');
+
+            button.addEventListener('click', function() {
+                const code = pre.textContent;
+                navigator.clipboard.writeText(code).then(function() {
+                    button.textContent = 'Copied!';
+                    setTimeout(function() {
+                        button.textContent = 'Copy';
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error('Failed to copy:', err);
+                    button.textContent = 'Failed';
+                    setTimeout(function() {
+                        button.textContent = 'Copy';
+                    }, 2000);
+                });
+            });
+
+            pre.parentElement.appendChild(button);
+        });
+    }
+
+    // Initial scan for code blocks
+    addCopyButtonsToCodeBlocks(document.body);
+})();
+
+// Smooth scroll behavior for table rows
+(function initSmoothScroll() {
+    // Already handled in addTocHtml function
+    // This is just a placeholder for any additional scroll enhancements
+})();
