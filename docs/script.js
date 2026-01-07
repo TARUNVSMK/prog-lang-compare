@@ -263,58 +263,54 @@ function getSafeName(value) {
 }
 
 function addLangToggle(prog_lang_list) {
+    const activeContainer = document.getElementById('activeLanguages');
+    const allContainer = document.getElementById('allLanguages');
 
-    // Creating toggle for each language 
+    // Creating toggle for each language
     for (let lang of prog_lang_list.sort()) {
         let columnTitle = lang;
         let columnName = getSafeName(lang);
-
 
         // Create a new anchor element
         let a = document.createElement('a');
 
         // Set the attributes
         a.setAttribute("class", "toggle-vis");
-        a.setAttribute("columnname", columnName)
+        a.setAttribute("columnname", columnName);
+        a.textContent = columnTitle;
 
-        // Set the text of the anchor element
-        a.textContent = columnTitle + ' , ';
-
+        // Mark default languages as active
         if (defaultShowLangs.includes(columnTitle)) {
-            a.style.color = "blue";
+            a.classList.add('active');
         }
-        else {
-            a.style.color = "grey";
-        }
-
 
         a.onclick = function (e) {
             e.preventDefault();
 
-            let mytable = $('#langTable').DataTable();        // Get the column API object
+            let mytable = $('#langTable').DataTable();
             let column = mytable.column($(this).attr('columnname') + ':name');
 
             // Toggle the visibility
             column.visible(!column.visible());
 
-            this.style.color = this.style.color == "grey" ? "blue" : "grey";
+            // Toggle active class
+            this.classList.toggle('active');
 
-
-            // if making visible fo rthe first time then fetch data for subconcepts and replace the placeholder text
+            // if making visible for the first time then fetch data for subconcepts and replace the placeholder text
             if (column.visible() == true && loadedColumns.includes(columnTitle) == false) {
                 loadLangConceptsInColumn('#langTable', columnTitle);
             }
-
         };
 
-        // Select the div with the specific class
-        // var div = document.querySelector('.toggle-vis'); 
-        var div = document.querySelector('#toggle');
+        // Add to active or all container
+        if (defaultShowLangs.includes(columnTitle)) {
+            activeContainer.appendChild(a.cloneNode(true));
+            // Re-attach event handler to cloned node
+            activeContainer.lastChild.onclick = a.onclick;
+        }
 
-        // Append the anchor element to the div
-        div.appendChild(a);
+        allContainer.appendChild(a);
     }
-
 }
 
 function addTocHtml(conceptsData) {
@@ -438,30 +434,49 @@ function addTocHtml(conceptsData) {
 (function initMobileMenu() {
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
 
     function toggleMenu() {
         sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
     }
 
     if (menuToggle) {
         menuToggle.addEventListener('click', toggleMenu);
     }
 
-    // Close sidebar when clicking outside on mobile
-    document.addEventListener('click', function(event) {
-        const isClickInside = sidebar.contains(event.target) || menuToggle.contains(event.target);
-
-        if (!isClickInside && window.innerWidth <= 768 && sidebar.classList.contains('active')) {
-            sidebar.classList.remove('active');
-        }
-    });
+    // Close sidebar when clicking overlay
+    if (overlay) {
+        overlay.addEventListener('click', closeMenu);
+    }
 
     // Close sidebar when clicking a link on mobile
     if (sidebar) {
         sidebar.addEventListener('click', function(event) {
             if (event.target.tagName === 'A' && window.innerWidth <= 768) {
-                sidebar.classList.remove('active');
+                closeMenu();
             }
+        });
+    }
+})();
+
+// Language Selector Expand/Collapse
+(function initLanguageExpander() {
+    const expandButton = document.getElementById('expandLanguages');
+    const allLanguagesSection = document.getElementById('allLanguagesSection');
+
+    if (expandButton && allLanguagesSection) {
+        expandButton.addEventListener('click', function() {
+            allLanguagesSection.classList.toggle('expanded');
+            this.textContent = allLanguagesSection.classList.contains('expanded') ? 'Show Less' : 'Show All';
         });
     }
 })();
