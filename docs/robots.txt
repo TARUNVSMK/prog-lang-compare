@@ -2,9 +2,3 @@
 
 User-agent: *
 Allow: /
-
-# Prevent indexing of raw JSON data
-Disallow: /content-autogen/
-
-# Sitemap location
-Sitemap: https://prog-lang-compare.netlify.app/sitemap.xml
