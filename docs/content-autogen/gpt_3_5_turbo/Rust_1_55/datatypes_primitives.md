@@ -1,35 +1,29 @@
-In Rust 1.55, there are four primitive data types. They are:
+In Rust 1.55, there are several primitive types available, including bool, char, integer types, and floating-point types. Here are some examples of these primitive types in Rust:
 
-1. `i32`: Signed 32-bit integer. It can store values between -2,147,483,648 and 2,147,483,647.
+1. bool: The bool type represents Boolean logic values and can only have two values, true or false. Example: 
 
-Example:
-```
-let x: i32 = 10;
-let y: i32 = -5;
-```
+   ```rust
+   let x: bool = true;
+   let y: bool = false;
+   ```
 
-2. `f64`: 64-bit floating point number. It can represent decimal numbers with up to 16 decimal digits of precision.
+2. char: The char type represents a Unicode scalar value and can be enclosed in single quotes. Example:
 
-Example:
-```
-let x: f64 = 3.14;
-let y: f64 = -2.5;
-```
+   ```rust
+   let c: char = 'A';
+   ```
 
-3. `bool`: Boolean type. It can only have two values: `true` and `false`.
+3. integers: Rust provides a several integer types that differ by their size and whether they are signed or unsigned, including i8, i16, i32, i64, u8, u16, u32, u64, and isize (architecture-dependent signed integer) and usize (architecture-dependent unsigned integer). Example:
 
-Example:
-```
-let x: bool = true;
-let y: bool = false;
-```
+   ```rust
+   let i: i32 = -42;
+   let u: u64 = 42;
+   ```
 
-4. `char`: Single Unicode scalar value. It can represent any Unicode character, including emojis.
+4. floating-point types: Rust has two primitive floating-point types, f32 and f64, which represent single-precision and double-precision floating-point numbers, respectively. Example:
 
-Example:
-```
-let x: char = 'a';
-let y: char = '😀';
-```
+   ```rust
+   let f: f64 = 3.14159;
+   ``` 
 
-These types are called primitive types because they are the most basic data types in Rust. Other data types like arrays, tuples, and structs are built upon these primitive types.
+These primitive types are the building blocks on which more complex types and data structures are built.

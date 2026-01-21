@@ -1,59 +1,27 @@
-In Java, primitive types are the basic fundamental building blocks of data types. These data types represent simple values and operations on them. There are 8 primitive types in Java: 
+In Java, primitive types are the most basic type of data that can be used to store simple values. There are eight primitive types in Java, which are:
 
-1. boolean: It represents a single bit of information and can have only two values, `true` or `false`.
-Example:
-```java
-boolean isJavaFun = true;
-System.out.println(isJavaFun); // Outputs true
-```
+1. byte - 8-bit signed integer data type.
+Example: `byte age = 25;`
 
-2. byte: It represents an 8-bit signed integer. 
-Example:
-```java
-byte age = 25;
-System.out.println(age); // Outputs 25
-```
+2. short - 16-bit signed integer data type.
+Example: `short temperature = -10;`
 
-3. short: It represents a 16-bit signed integer. 
-Example:
-```java
-short height = 160;
-System.out.println(height); // Outputs 160
-```
+3. int - 32-bit signed integer data type.
+Example: `int number = 42;`
 
-4. int: It represents a 32-bit signed integer.
-Example:
-```java
-int number = 100;
-System.out.println(number); // Outputs 100
-```
+4. long - 64-bit signed integer data type.
+Example: `long distance = 1000000L;`
 
-5. long: It represents a 64-bit signed integer. 
-Example:
-```java
-long veryLargeNumber = 123456789000L;
-System.out.println(veryLargeNumber); // Outputs 123456789000
-```
+5. float - 32-bit IEEE 754 floating point data type.
+Example: `float price = 4.99f;`
 
-6. float: It represents a single-precision 32-bit floating-point number. 
-Example:
-```java
-float pi = 3.14f;
-System.out.println(pi); // Outputs 3.14
-```
+6. double - 64-bit IEEE 754 floating point data type.
+Example: `double pi = 3.14159265359;`
 
-7. double: It represents a double-precision 64-bit floating-point number. 
-Example:
-```java
-double gravity = 9.8;
-System.out.println(gravity); // Outputs 9.8
-```
+7. boolean - boolean data type represents two possible values: true and false.
+Example: `boolean isRaining = true;`
 
-8. char: It represents a single 16-bit Unicode character. 
-Example:
-```java
-char initial = 'J';
-System.out.println(initial); // Outputs J
-```
+8. char - 16-bit Unicode character data type.
+Example: `char grade = 'A';`
 
-Note that all primitive types have a default value which is 0 or false for the numeric types and false for the boolean type.
+In the example code, variables are declared and initialized with different primitive types. The variable names can be chosen freely, but they should be informative. Note that the `long` and `float` types require a suffix (`L` and `f`, respectively) to distinguish them from other types.
