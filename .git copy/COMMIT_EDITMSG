@@ -1,0 +1,125 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Add.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Add.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Concatenation.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Concatenation.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Count.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Count.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Create_populated.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Create_populated.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Delete_element.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Delete_element.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Find_first.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Find_first.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Get_first__last_element.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Get_first__last_element.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Include_.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Include_.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Index_of_element.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Index_of_element.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Iterate.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Iterate.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Iterate_with_index.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Iterate_with_index.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Map__change_all_.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Map__change_all_.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Multidimensional.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Multidimensional.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Reduce.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Reduce.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Select__find_all_.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Select__find_all_.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Size.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Size.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Sort.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Sort.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_Unique.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_Unique.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Array_With_different_types.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Array_With_different_types.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Constructor.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Constructor.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Declare.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Declare.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Field.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Field.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Get_set.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Get_set.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Has_method_.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Has_method_.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Inheritance.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Inheritance.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Method_call.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Method_call.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Mixin.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Mixin.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Private_method.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Private_method.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Private_method__access_instance_variable.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Private_method__access_instance_variable.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Class_Static_method.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Class_Static_method.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Conditional_And_Or.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Conditional_And_Or.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Conditional_If.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Conditional_If.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Conditional_If_assign.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Conditional_If_assign.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Conditional_If_else.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Conditional_If_else.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Conditional_Switch.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Conditional_Switch.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Conditional_Switch_as_else_if.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Conditional_Switch_as_else_if.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Conditional_Ternary.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Conditional_Ternary.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Conditional_Unless.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Conditional_Unless.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Datatypes_Primitives.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Datatypes_Primitives.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Error_handling_Method.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Error_handling_Method.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Error_handling_Throw_exception.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Error_handling_Throw_exception.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Error_handling_Try_catch_finally.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Error_handling_Try_catch_finally.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Error_handling_With_a_message.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Error_handling_With_a_message.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/File_Dir_path.md -> docs/content-autogen/gpt_3_5_turbo/C___20/File_Dir_path.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/File_File_path.md -> docs/content-autogen/gpt_3_5_turbo/C___20/File_File_path.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/File_Get_working_dir_path.md -> docs/content-autogen/gpt_3_5_turbo/C___20/File_Get_working_dir_path.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/File_Parent_dir_path.md -> docs/content-autogen/gpt_3_5_turbo/C___20/File_Parent_dir_path.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/File_Read.md -> docs/content-autogen/gpt_3_5_turbo/C___20/File_Read.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/File_Sister_dir_path.md -> docs/content-autogen/gpt_3_5_turbo/C___20/File_Sister_dir_path.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/File_Write.md -> docs/content-autogen/gpt_3_5_turbo/C___20/File_Write.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Hash__map__Add.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Hash__map__Add.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Hash__map__Create_populated.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Hash__map__Create_populated.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Hash__map__Get_value.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Hash__map__Get_value.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Hash__map__Include_.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Hash__map__Include_.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Hash__map__Iterate.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Hash__map__Iterate.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Hash__map__Size.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Hash__map__Size.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Importing_Libraries_import.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Importing_Libraries_import.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Loop_Break.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Loop_Break.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Loop_For.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Loop_For.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Loop_For_with_a_step.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Loop_For_with_a_step.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Loop_Next_Continue.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Loop_Next_Continue.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Loop_Return_array.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Loop_Return_array.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Loop_Times.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Loop_Times.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Loop_Until.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Loop_Until.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Loop_While.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Loop_While.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Math_Max_Min.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Math_Max_Min.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Math_Sqrt.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Math_Sqrt.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Method___Function_Alias.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Method___Function_Alias.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Method___Function_Block_binding.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Method___Function_Block_binding.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Method___Function_Block_passing.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Method___Function_Block_passing.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Method___Function_Closure.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Method___Function_Closure.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Method___Function_Declare.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Method___Function_Declare.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Method___Function_Default_value_for_argument.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Method___Function_Default_value_for_argument.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Method___Function_Initialize_in_runtime.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Method___Function_Initialize_in_runtime.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Method___Function_Multiple_arguments.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Method___Function_Multiple_arguments.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Method___Function_Return.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Method___Function_Return.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Number_Compare.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Number_Compare.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Number_Float.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Number_Float.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Number_Increment.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Number_Increment.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Number_Random.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Number_Random.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_Assign_this_or_that.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_Assign_this_or_that.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_Assign_value_if_not_exist.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_Assign_value_if_not_exist.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_Comment.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_Comment.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_Date.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_Date.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_Destructuring_assignment.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_Destructuring_assignment.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_Import_another_file.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_Import_another_file.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_Not.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_Not.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_Run_command.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_Run_command.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_Time.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_Time.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_structure_Boolean.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_structure_Boolean.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_structure_Constant.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_structure_Constant.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_structure_Constant_list.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_structure_Constant_list.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Other_structure_Struct.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Other_structure_Struct.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/String_Compare.md -> docs/content-autogen/gpt_3_5_turbo/C___20/String_Compare.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/String_Concatenation.md -> docs/content-autogen/gpt_3_5_turbo/C___20/String_Concatenation.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/String_Create.md -> docs/content-autogen/gpt_3_5_turbo/C___20/String_Create.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/String_Interpolation.md -> docs/content-autogen/gpt_3_5_turbo/C___20/String_Interpolation.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/String_Regex.md -> docs/content-autogen/gpt_3_5_turbo/C___20/String_Regex.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/String_Remove_leading_and_trailing_whitespace.md -> docs/content-autogen/gpt_3_5_turbo/C___20/String_Remove_leading_and_trailing_whitespace.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/String_Remove_part.md -> docs/content-autogen/gpt_3_5_turbo/C___20/String_Remove_part.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/String_Replace.md -> docs/content-autogen/gpt_3_5_turbo/C___20/String_Replace.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/String_Split.md -> docs/content-autogen/gpt_3_5_turbo/C___20/String_Split.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Type_Get_type_of_object.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Type_Get_type_of_object.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Type_Int_to_Float.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Type_Int_to_Float.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Type_Int_to_String.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Type_Int_to_String.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Type_Null_True_False_.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Type_Null_True_False_.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Type_String_.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Type_String_.md
+#	renamed:    docs/content-autogen/gpt_3_5_turbo/cpp/Type_String_to_Int.md -> docs/content-autogen/gpt_3_5_turbo/C___20/Type_String_to_Int.md
+#	modified:   docs/prog_langs.yaml
+#	modified:   docs/script.js
+#
+# Changes not staged for commit:
+#	modified:   README.md
+#	modified:   docs/content-autogen/gpt_3_5_turbo/Java_20/Datatypes_Primitives.md
+#	modified:   docs/content-autogen/gpt_3_5_turbo/Python_3_10/Datatypes_Primitives.md
+#	modified:   docs/content-autogen/gpt_3_5_turbo/Rust_1_55/Datatypes_Primitives.md
+#
